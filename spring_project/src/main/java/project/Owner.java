@@ -6,12 +6,12 @@ import java.util.Set;
 
 public class Owner extends Person {
 
-  private LicenseCard license;
+  private DriverLicense license;
   private String phoneNumber;
   private Set<Vehicle> vehicles;
 
   public Owner(String firstName, String lastName, LocalDate dateOfBirth,
-      LicenseCard license, String phoneNumber) {
+      DriverLicense license, String phoneNumber) {
     super(firstName, lastName, dateOfBirth);
 
     if(license.getDateOfBirth() != dateOfBirth) {
@@ -23,7 +23,7 @@ public class Owner extends Person {
   }
 
   public Owner(String firstName, String lastName, LocalDate dateOfBirth,
-      LicenseCard license, String phoneNumber, Set<Vehicle> vehicles) {
+      DriverLicense license, String phoneNumber, Set<Vehicle> vehicles) {
     super(firstName, lastName, dateOfBirth);
 
     if(license.getDateOfBirth() != dateOfBirth) {
@@ -35,11 +35,11 @@ public class Owner extends Person {
   }
 
 
-  public LicenseCard getLicense() {
+  public DriverLicense getLicense() {
     return license;
   }
 
-  public void setLicense(LicenseCard license) {
+  public void setLicense(DriverLicense license) {
     this.license = license;
   }
 
