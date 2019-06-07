@@ -2,7 +2,7 @@ package project;
 
 import java.time.LocalDate;
 
-public class LicenseCard {
+public class DriverLicense {
 
   private String licenseNumber;
   private String firstName;
@@ -14,7 +14,7 @@ public class LicenseCard {
   private LocalDate issueDate;
   private LocalDate expDate;
 
-  public LicenseCard(String licenseNumber, String firstName, String lastName, String sex,
+  public DriverLicense(String licenseNumber, String firstName, String lastName, String sex,
       LocalDate dateOfBirth, AddressForm address, Double height,
       LocalDate issueDate, LocalDate expDate) {
     this.licenseNumber = licenseNumber;
