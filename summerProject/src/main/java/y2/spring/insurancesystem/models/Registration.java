@@ -4,11 +4,13 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "Registration")
 public class Registration {
 
   @Id
-  private ObjectId _id;
+  private String id;
 
   private Owner owner;
   private String plateNumber;
@@ -19,10 +21,9 @@ public class Registration {
   private String model;
   private String modelYear;
 
-  public Registration(ObjectId _id, Owner owner, String plateNumber,
+  public Registration(Owner owner, String plateNumber,
                       String vin, LocalDate issueDate, LocalDate expDate,
                       String make, String model, String modelYear) {
-    this._id = _id;
     this.owner = owner;
     this.plateNumber = plateNumber;
     this.vin = vin;
@@ -33,16 +34,12 @@ public class Registration {
     this.modelYear = modelYear;
   }
 
-  public String get_id() {
-    return _id.toHexString();
-  }
-
-  public void set_id(ObjectId _id) {
-    this._id = _id;
+  public String getId() {
+    return this.id;
   }
 
   public Owner getOwner() {
-    return owner;
+    return this.owner;
   }
 
   public void setOwner(Owner owner) {

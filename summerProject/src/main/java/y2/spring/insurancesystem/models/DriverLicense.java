@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class DriverLicense {
 
   @Id
-  private ObjectId _id;
+  private String id;
 
   private String licenseNumber;
   private String firstName;
@@ -20,10 +20,10 @@ public class DriverLicense {
   private LocalDate issueDate;
   private LocalDate expDate;
 
-  public DriverLicense(ObjectId _id, String licenseNumber, String firstName,
+  public DriverLicense(String licenseNumber, String firstName,
                        String lastName, String sex, LocalDate dateOfBirth,
                        AddressForm address, Double height, LocalDate issueDate, LocalDate expDate) {
-    this._id = _id;
+
     this.licenseNumber = licenseNumber;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -35,13 +35,10 @@ public class DriverLicense {
     this.expDate = expDate;
   }
 
-  public String get_id() {
-    return _id.toHexString();
+  public String getId() {
+    return this.id;
   }
 
-  public void set_id(ObjectId _id) {
-    this._id = _id;
-  }
 
   public String getLicenseNumber() {
     return licenseNumber;

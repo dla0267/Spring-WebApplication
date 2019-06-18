@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 
 public class AddressForm {
   @Id
-  private ObjectId _id;
+  private String id;
 
   private String address;
   private String city;
@@ -14,8 +14,8 @@ public class AddressForm {
   private Integer zipCode;
 
 
-  public AddressForm(ObjectId _id, String address, String city, String state, String country, Integer zipCode) {
-    this._id = _id;
+  public AddressForm(String address, String city, String state, String country, Integer zipCode) {
+
     this.address = address;
     this.city = city;
     this.state = state;
@@ -23,13 +23,10 @@ public class AddressForm {
     this.zipCode = zipCode;
   }
 
-  public String get_id() {
-    return _id.toHexString();
+  public String getId() {
+    return this.id;
   }
 
-  public void set_id(ObjectId _id) {
-    this._id = _id;
-  }
 
   public String getAddress() {
     return address;

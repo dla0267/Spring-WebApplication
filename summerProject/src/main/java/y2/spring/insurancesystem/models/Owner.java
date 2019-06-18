@@ -1,40 +1,47 @@
 package y2.spring.insurancesystem.models;
 
 
-import org.bson.types.ObjectId;
+import java.util.HashSet;
 import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 import java.util.Set;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "Owners")
 public class Owner extends Person {
 
 
     @Id
-    public ObjectId _id;
+    public String id;
 
     private DriverLicense license;
     private String phoneNumber;
     private Set<Vehicle> vehicles;
 
 
-    public Owner(ObjectId _id, String firstName,
+    public Owner(String firstName,
                  String lastName, LocalDate dateOfBrith,
-                 DriverLicense license, String phoneNumber, Set<Vehicle> vehicles) {
+                 DriverLicense license, String phoneNumber, HashSet<Vehicle> vehicles) {
         super(firstName, lastName, dateOfBrith);
 
-        this._id = _id;
         this.license = license;
         this.phoneNumber = phoneNumber;
         this.vehicles = vehicles;
     }
 
-    public String get_id() {
-        return _id.toHexString();
+    public Owner(String firstName,
+        String lastName, LocalDate dateOfBrith,
+        DriverLicense license, String phoneNumber) {
+        super(firstName, lastName, dateOfBrith);
+
+        this.license = license;
+        this.phoneNumber = phoneNumber;
+        this.vehicles = new HashSet<>();
     }
 
-    public void set_id(ObjectId _id) {
-        this._id = _id;
+    public String getId() {
+        return this.id;
     }
 
     public DriverLicense getLicense() {
