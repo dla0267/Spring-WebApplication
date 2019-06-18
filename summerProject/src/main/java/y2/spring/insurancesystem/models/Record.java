@@ -8,22 +8,17 @@ import java.time.LocalDate;
 public class Record {
 
   @Id
-  private ObjectId _id;
+  private String id;
   private LocalDate issueDate;
   private RecordType type;
 
-  public Record(ObjectId _id, LocalDate issueDate, RecordType type) {
-    this._id = _id;
+  public Record(LocalDate issueDate, RecordType type) {
     this.issueDate = issueDate;
     this.type = type;
   }
 
-  public String get_id() {
-    return _id.toHexString();
-  }
-
-  public void set_id(ObjectId _id) {
-    this._id = _id;
+  public String getId() {
+    return this.id;
   }
 
   public LocalDate getIssueDate() {

@@ -18,6 +18,10 @@ public class Vehicle {
   private String model;
   private String modelYear;
 
+
+  public Vehicle() {
+
+  }
   public Vehicle(String plateNumber, String vin, VehicleType type, String make,
       String model, String modelYear) {
     this.plateNumber = plateNumber;

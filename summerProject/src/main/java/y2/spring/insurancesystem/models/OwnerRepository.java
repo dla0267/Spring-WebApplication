@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OwnerRepository extends MongoRepository<Owner, String> {
 
+  Owner findByPhoneNumber(String phoneNumber);
+
 }

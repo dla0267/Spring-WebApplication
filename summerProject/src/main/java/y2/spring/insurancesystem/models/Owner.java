@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Owners")
 public class Owner extends Person {
 
-
     @Id
     public String id;
 
@@ -39,6 +38,7 @@ public class Owner extends Person {
         this.phoneNumber = phoneNumber;
         this.vehicles = new HashSet<>();
     }
+
 
     public String getId() {
         return this.id;
